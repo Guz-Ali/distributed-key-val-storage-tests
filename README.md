@@ -21,15 +21,17 @@ Connecting VMs
 - Now generate public key in the other VM, and copy public key to this VM.
 - VMs should be able to connect to each other with just 'ssh ip_number' (instead of ssh user@ip_number)
 - To add all ssh connections, save the public keys in a text file and copy it to all VMs' authorized_keys file.
+- Take a look at scripts/connect-instances.sh to see how to do them all the steps at once for an instance. Do not run this script as it doesn't work as intended. Instead use the code to setup ssh and pass public keys between instances.
 
 Setting up Cassandra
 - Here we will set up Cassandra servers on all instances
+- Direct to scripts folder with cd scripts
 - First run: sh run-script-on-all-VMs.sh setup-cassandra.sh
 - This will setup Cassandra on all instances.
 - Connect to small-instance-1 and configure with vim /etc/hosts to add all IP addresses for all instances
 - Configure the same file for all instances but only change the small-instance-x ip address to its own ip address.
-- In each instance, configure inside cassandra folder conf/cassandra.yaml to change listen_address, rpc_address to small-instance-x, and seed to the ip address of small-instance-x.
-- In each instance, start Cassandra by running from the cassandra folder bin/cassandra (might require -R option to run as root). 
+- In each instance, configure inside cassandra folder conf/cassandra.yaml to change listen_address, rpc_address to "small-instance-x", and seed to the ip address of small-instance-x.
+- In each instance, start Cassandra by running from the cassandra folder: bin/cassandra (might require -R option to run as root). 
 - Run from the cassandra folder: bin/nodetool status to see active or down cassandra servers.
 
 Running Cassandra Tests

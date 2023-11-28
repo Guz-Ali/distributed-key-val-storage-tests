@@ -1,4 +1,4 @@
-for n in 2 3 4 5 6 7 8
+for n in 1 2 3 4 5 6 7 8
 do
 	lxc launch images:ubuntu/22.04 small-instance-$n -c limits.cpu=3 -c limits.memory=12GB --vm
 	lxc config device override small-instance-$n root size=24GiB
