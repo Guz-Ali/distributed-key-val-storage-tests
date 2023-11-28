@@ -1,0 +1,21 @@
+# installs cassandra on all instances.
+# runs on root
+
+sudo -s
+
+for i in {1..8}
+do
+  lxc exec small-instance-$i -- /bin/bash 
+  apt update
+  apt install openjdk-8-jdk
+  java -version
+  
+  apt install curl
+  curl -OL https://dlcdn.apache.org/cassandra/4.0.11/apache-cassandra-4.0.11-bin.tar.gz
+  tar xzvf apache-cassandra-4.0.11-bin.tar.gz
+  
+  cd apache-cassandra-4.0.11/
+  bin/cassandra &
+done
+
+bin/nodetool status 

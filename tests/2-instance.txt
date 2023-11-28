@@ -1,0 +1,6 @@
+test_data size:1000
+insert 1000 items time consumed: 516391us
+lookup 1000 items time consumed: 325735us
+delete 1000 items time consumed: 431766us
+total time consumed: 1273892us
+average time consumed: 424630.6666666667us

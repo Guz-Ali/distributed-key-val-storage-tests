@@ -1,4 +1,4 @@
-lxc exec small-instance-1 -- /bin/bash
+#lxc exec small-instance-1 -- /bin/bash
 touch all_authorized_keys
 
 ssh-keygen

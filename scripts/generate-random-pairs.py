@@ -1,6 +1,7 @@
 import random
 import string
 import csv
+import os.path
 
 test_data = []
 keys = set()
@@ -17,7 +18,7 @@ for _ in range(1000):
     test_data.append([key, value])
 
 header = ['key', 'value']
-with open('test_data.csv', 'w', encoding='utf-8', newline='') as f:
+with open(os.path.dirname(__file__) + '/../data/test_data.csv', 'w', encoding='utf-8', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(header)
     writer.writerows(test_data)
