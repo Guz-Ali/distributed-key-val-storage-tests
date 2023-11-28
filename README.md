@@ -38,6 +38,24 @@ Running Cassandra Tests
 - To run the cassandra tests, simply run python3 test-cassandra-x.py {1,2,4,8}
 - These will output the tests results to command line. I manually pasted them to the log files inside tests.
 
+Stopping Cassandra Servers
+- Use the following lines of code to stop any Cassandra process: 
+- user=`whoami`
+- pgrep -u $user -f cassandra | xargs kill -9
+- OR use stop-cassandra.sh together with run-script-on-all-VMs.sh like this: sh run-script-on-all-VMs.sh stop-cassandra.sh
+
 
 Setting up MongoDB
+- Follow installation instructions on https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+- Configure instance ulimit settings as described in https://www.mongodb.com/docs/manual/reference/ulimit/
+- OR use scripts/setup-mongodb.sh together with run-script-on-all-VMs.sh like this to set it up for all instances: sh run-script-on-all-VMs.sh setup-mongodb.sh  (first navigate to scripts folder)
+- After installations are complete, go into each instance and configure /etc/mongod.conf . You'll need to change bind ip address.
+- Useful resource for starting MongoDB on all instances: https://computingforgeeks.com/how-to-setup-mongodb-replication-on-ubuntu/
+
+
+
+Resources:
+- Cassandra: https://cassandra.apache.org/doc/latest/
+- MongoDB: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+- MongoDB replica installation: https://computingforgeeks.com/how-to-setup-mongodb-replication-on-ubuntu/
 
