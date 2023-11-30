@@ -51,7 +51,9 @@ Setting up MongoDB
 - OR use scripts/setup-mongodb.sh together with run-script-on-all-VMs.sh like this to set it up for all instances: sh run-script-on-all-VMs.sh setup-mongodb.sh  (first navigate to scripts folder)
 - After installations are complete, go into each instance and configure /etc/mongod.conf . You'll need to change bind ip address.
 - Useful resource for starting MongoDB on all instances: https://computingforgeeks.com/how-to-setup-mongodb-replication-on-ubuntu/
-
+- Deploying a Replica Set: https://www.mongodb.com/docs/manual/tutorial/deploy-replica-set/
+- Deploying a Replica Set 2: https://www.mongodb.com/docs/manual/tutorial/deploy-replica-set-for-testing/
+- Install mongocxx to use C++ with MongoDB: https://mongocxx.org/
 
 
 Resources:

@@ -1,0 +1,4 @@
+Insert 1000 items time: 0.679ms
+Lookup 1000 items time: 0.639ms
+Delete 1000 items time: 0.397ms
+Average time for operations: 0.571ms
