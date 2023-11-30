@@ -18,13 +18,10 @@ session.execute("create keyspace if not exists %s with replication = {'class': '
 session.set_keyspace(keyspacename)
 
 s = session
-
 s.execute("DROP TABLE IF EXISTS kvpair")
 s.execute("CREATE TABLE kvpair (k text PRIMARY KEY, v text)")
 
-total_start = datetime.datetime.now()
-
-# insert
+# insert benchmark
 start = datetime.datetime.now()
 
 for i in range(1000):
@@ -32,11 +29,10 @@ for i in range(1000):
 
 end = datetime.datetime.now()
 
-inserttime = end - start
-print("insert %d items time consumed: %sus" % (test_size, inserttime.microseconds) )
+insert_time = end - start
+print("insert %d items time: %sus" % (test_size, inserttime.microseconds) )
 
-# lookup
-
+# lookup benchmark
 start = datetime.datetime.now()
 
 for i in range(1000):
@@ -44,11 +40,10 @@ for i in range(1000):
 
 end = datetime.datetime.now()
 
-lookuptime = end - start
-print("lookup %d items time consumed: %sus" % (test_size, lookuptime.microseconds) )
+lookup_time = end - start
+print("lookup %d items time: %sus" % (test_size, lookuptime.microseconds) )
 
-# delete
-
+# delete benchmark
 start = datetime.datetime.now()
 
 for i in range(1000):
@@ -56,15 +51,14 @@ for i in range(1000):
 
 end = datetime.datetime.now()
 
-deletetime = end - start
-print("delete %d items time consumed: %sus" % (test_size, deletetime.microseconds) )
+delete_time = end - start
+print("delete %d items time: %sus" % (test_size, delete_time.microseconds) )
 
-# total
-# total_end = datetime.datetime.now()
-total_during = inserttime.microseconds + lookuptime.microseconds + deletetime.microseconds; #total_end - total_start
-average = total_during / 3;
+# total time
+total_time = insert_time.microseconds + lookup_time.microseconds + delete_time.microseconds; #total_end - total_start
+average_time = total_time / 3;
 
-print("total time consumed: %sus" % total_during)
-print("average time consumed: %sus" % average)
+print("total time: %sus" % total_time)
+print("average time: %sus" % average_time)
 
 
