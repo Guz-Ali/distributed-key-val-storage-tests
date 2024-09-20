@@ -64,6 +64,6 @@ Shell Access: (To ssh, requires installing openssh-server on target VM)
 
 #### Resources:
 
-- Cassandra: `https://cassandra.apache.org/doc/latest/`
-- MongoDB: `https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/`
-- MongoDB replica installation: `https://computingforgeeks.com/how-to-setup-mongodb-replication-on-ubuntu/`
+- Cassandra: https://cassandra.apache.org/doc/latest/
+- MongoDB: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+- MongoDB replica installation: https://computingforgeeks.com/how-to-setup-mongodb-replication-on-ubuntu/
