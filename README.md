@@ -51,15 +51,15 @@ Shell Access: (To ssh, requires installing openssh-server on target VM)
 - use stop-cassandra.sh together with run-script-on-all-VMs.sh like this: `sh run-script-on-all-VMs.sh stop-cassandra.sh`
 
 #### Setting up MongoDB
-- Follow installation instructions on `https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/`
-- Configure instance ulimit settings as described in `https://www.mongodb.com/docs/manual/reference/ulimit/`
+- Follow installation instructions on https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+- Configure instance ulimit settings as described in https://www.mongodb.com/docs/manual/reference/ulimit/
 - OR
 - use scripts/setup-mongodb.sh together with run-script-on-all-VMs.sh like this to set it up for all instances: `sh run-script-on-all-VMs.sh setup-mongodb.sh`  (first navigate to scripts folder)
 - After installations are complete, go into each instance and configure `/etc/mongod.conf`. You'll need to change bind ip address.
-- Useful resource for starting MongoDB on all instances: `https://computingforgeeks.com/how-to-setup-mongodb-replication-on-ubuntu/`
-- Deploying a Replica Set: `https://www.mongodb.com/docs/manual/tutorial/deploy-replica-set/`
-- Deploying a Replica Set 2: `https://www.mongodb.com/docs/manual/tutorial/deploy-replica-set-for-testing/`
-- Install `mongocxx` to use C++ with MongoDB: `https://mongocxx.org/`
+- Useful resource for starting MongoDB on all instances: https://computingforgeeks.com/how-to-setup-mongodb-replication-on-ubuntu/
+- Deploying a Replica Set: https://www.mongodb.com/docs/manual/tutorial/deploy-replica-set/
+- Deploying a Replica Set 2: https://www.mongodb.com/docs/manual/tutorial/deploy-replica-set-for-testing/
+- Install `mongocxx` to use C++ with MongoDB: https://mongocxx.org/
 
 
 #### Resources:
